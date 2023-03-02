@@ -35,3 +35,14 @@
     - name: print play variable from INVENTORY
       ansible.builtin.debug:
         msg: "URL == {{ URL }}, hostname of servers = {{ ansible_hostname }}"
+
+- name: Registerd variable
+  host: localhost
+  tasks:
+    - name: Get uptime output
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: print out
+      ansible.builtin.debug:
+        msg: "{{ out }}"
