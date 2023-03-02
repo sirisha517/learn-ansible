@@ -1,9 +1,18 @@
-- name : Play Variables
+- name : Play Variables # play level variables
   hosts : localhost
-
+  vars :
+    URL: play.example.com
   tasks :
-    - vars:
-        URL: play.example.com
     - name : print play variable
       ansible.builtin.debug:
          msg: URL == {{ URL }}
+
+- name : Play Variables from file # varaiables from files
+  hosts : localhost
+  # varaiables from files works only on play level
+  vars_file :
+    - var.yml
+  tasks :
+    - name : print play variable from files
+      ansible.builtin.debug:
+        msg: URL == {{ URL }}
