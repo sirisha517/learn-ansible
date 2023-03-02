@@ -28,10 +28,10 @@
       ansible.builtin.debug:
         msg: URL == {{ URL }}
 
-## task level variables
+## Inventory level variables
 - name: vars from inventory
   hosts: all
   tasks:
-    - name: print play variable from INV
+    - name: print play variable from INVENTORY
       ansible.builtin.debug:
-        msg: URL == {{ URL }}
+        msg: "URL == {{ URL }}, hostname of servers = {{ ansible_hostname }}"
