@@ -1,5 +1,5 @@
-- name : Play variables
-  host : all
+- name : Play Variables
+  hosts : all
   connection : local
   vars :
     URL: play.example.com
