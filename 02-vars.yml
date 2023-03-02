@@ -1,10 +1,9 @@
 - name : Play Variables
   hosts : localhost
-  vars :
-    URL: play.example.com
-    website : www.sirisha.com
+
   tasks :
+    - vars:
+        URL: play.example.com
     - name : print play variable
       ansible.builtin.debug:
          msg: URL == {{ URL }}
-         website: website == {{ website }}
