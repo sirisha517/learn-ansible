@@ -37,7 +37,7 @@
         msg: "URL == {{ URL }}, hostname of servers = {{ ansible_hostname }}"
 
 - name: Registered variable
-  host: localhost
+  hosts: localhost
   tasks:
     - name: Get uptime output
       ansible.builtin.shell: uptime
