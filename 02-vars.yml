@@ -6,4 +6,5 @@
   tasks :
     - name : print play variable
       ansible.builtin.debug:
-         msg: [ URL == {{ URL }} , website == {{ website }}]
+         msg: URL == {{ URL }}
+         website: website == {{ website }}
